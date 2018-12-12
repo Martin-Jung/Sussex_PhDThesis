@@ -1,6 +1,5 @@
 The main content folder for all your written content. Modify the main.tex to specify what files to include. 
 
-00Frontmatter.tex
 01Introduction.tex
 02Chapter2.tex
 03Chapter2.tex
