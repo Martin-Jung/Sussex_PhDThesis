@@ -1,8 +1,8 @@
 # A PhD Thesis template
 
-This is the template that I used for my PhD thesis at the University of Sussex. I created this template so that PhD students in the future can reuse it for their thesis. The whole template is released under a MIT license.
+This is the template that I used for my PhD thesis at the University of Sussex. I created this template so that others can reuse in the future for their thesis. The whole template is released under a MIT license.
 
-This template builds upon a previous templates I made for my BSc and MSc thesis. I also took some inspiration from [Fabrizio's](https://github.com/fabriziomiano/phd_thesis) excellent Latex template.
+This template builds upon previous templates I made for my BSc and MSc thesis. I also took some inspiration from [Fabrizio's](https://github.com/fabriziomiano/phd_thesis) excellent Latex template.
 
 I ensured that this template is compatible to the PhD thesis format expected by University of Sussex PhD students, but it might be useful for PhD students of other Universities as well. The Phd template assumes a PhD by publication style!
 
@@ -26,4 +26,4 @@ I made this template on Linux using mainly Latexila. To compile this thesis run 
 - bibtex main
 - pdflatex main.tex (x2)
 
-Alternatively upload to [www.overleaf.com](overleaf) which also has an easy to use interface to load and compile Tex documents.
+Alternatively upload to [overleaf](www.overleaf.com) which also has an easy to use interface to load and compile Tex documents.

@@ -1,0 +1,125 @@
+ % **************************************************************************************************************
+% A PhD thesis suitable for submission at the University of Sussex
+%
+% Copyright (c) 2018 Martin Jung
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE. 
+%
+% **************************************************************************************************************
+
+% Document class via KOMA script
+\documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,a4paper,%1headlines,% letterpaper 
+                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                BCOR=5mm,paper=a4,fontsize=12pt,
+                english,%
+                ]{scrreprt}
+
+\newcommand{\myTitle}{The influence of land dynamics on biodiversity \xspace}
+\newcommand{\mySubtitle}{Recommendations for broad-scale diversity models from an independent study\xspace}
+\newcommand{\myKeywords}{biodiversity, PREDICTS, land change, model, remote sensing, EVI, biotic lag \xspace}
+\newcommand{\myDegree}{\xspace}
+\newcommand{\myName}{Martin Jung\xspace}
+\newcommand{\myProf}{J\o rn P.W. Scharlemann\xspace}
+\newcommand{\myOtherProf}{Pedram Rowhani\xspace}
+\newcommand{\mySupervisor}{J\o rn P.W. Scharlemann\xspace}
+\newcommand{\myFaculty}{Faculty of Science\xspace}
+\newcommand{\myDepartment}{Department of Biology\xspace}
+\newcommand{\myCenter}{Center for Macroecology,Evolution and Climate\xspace}
+\newcommand{\myUni}{University of Sussex\xspace}
+\newcommand{\myLocation}{Brighton\xspace}
+\newcommand{\myTime}{\today \xspace}
+\newcommand{\myVersion}{version 1.0\xspace}
+
+% Load all settings and packages
+\input{settings}
+
+% **************************************************************************************************************
+%---------------------------------------------------
+% BEGIN DOCUMENT
+%---------------------------------------------------
+
+\begin{document}
+\frenchspacing
+\raggedbottom
+
+\pagenumbering{roman}
+\pagestyle{plain}
+
+%---------------------------------------------------
+% PREAMBLE: roman page numbering i, ii, iii, ...
+%---------------------------------------------------
+
+\begingroup
+  \frontmatter
+  \pagenumbering{roman}
+  \clearpage\input{FrontBackMatter/Titlepage}
+  \clearpage\input{FrontBackMatter/Dedication} % Dedication page
+  \clearpage\input{FrontBackMatter/Acknowledgments} % Acknowledgements page
+  \clearpage\input{FrontBackMatter/Declaration} % Declaration
+  \clearpage\input{FrontBackMatter/Abstract} % Abstract page
+\endgroup
+
+%---------------------------------------------------
+% TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
+%---------------------------------------------------
+\begingroup
+  \newpage  
+  \setlength{\parskip}{0pt} % To restore distance between Chapters, sections and subsections in the table of contents
+  \pdfbookmark[0]{Contents}{contents_bookmark}
+  \tableofcontents*  
+\endgroup
+
+%---------------------------------------------------
+% MAIN THESIS TEXT: arabic page numbering 1, 2, 3, ...
+% THESIS CONTENT - CHAPTERS
+%---------------------------------------------------
+
+\pagenumbering{arabic} %Start official numbering here
+%\setcounter{page}{90} % Manual adjustment if necessary
+
+\pagestyle{scrheadings}
+
+\mainmatter
+\pagenumbering{arabic}
+\begingroup
+  \input{content/intro}  
+\endgroup
+
+%---------------------------------------------------
+% APPENDICES
+%---------------------------------------------------
+\appendix
+\begingroup
+  \input{content/appA.tex}
+\endgroup
+\backmatter
+%\input{FrontBackMatter/Acronyms.tex}
+
+%---------------------------------------------------
+% BIBLIOGRAPHY
+%---------------------------------------------------
+\clearpage
+\phantomsection
+\bibliography{Chapters/bibliography}
+\clearpage\input{FrontBackMatter/Colophon}
+
+%---------------------------------------------------
+% END DOCUMENT
+%---------------------------------------------------
+\end{document}

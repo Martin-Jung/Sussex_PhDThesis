@@ -1,0 +1,27 @@
+# Files
+.DS_Store
+.directory
+*.toc
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls	
+*.lof	
+*.log	
+*.lot	
+*.out
+main.log
+main.out
+main.fls
+main.pdf
+
+settings.fls
+settings.log
+*.synctex.gz
+
+Output/*.fls
+Output/*.log
+Output/*.out
+Output/*.pdf 
