@@ -1,0 +1,41 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE PAGE: The title page should give the following information:
+%%	(i) the full title of the thesis and the sub-title if any;
+%%	(ii) the full name of the author;
+%%	(iii) the qualification aimed for;
+%%	(iv) the name of the University of Sussex;
+%%	(v) the month and year of submission.
+\pagestyle{empty}
+%\begin{titlepage}
+	\begin{center}
+
+		\includegraphics[width=5cm]{uslogo.eps}\\[2cm]% \bigskip
+		%\vspace*{.05\textheight}
+		\hrulefill\textsc{\Large Doctoral Thesis}\hrulefill\\%[0.5cm] % Thesis type
+
+		\Huge \textbf{\myTitle}\\[3cm] % Thesis title
+
+		\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of Doctor of Philosophy}\\[0.5cm] % University 
+		\textit{in the}\\[0.5cm]
+		\myDepartment\\ \myFaculty\\[1cm]
+	
+		\begin{minipage}{.45\linewidth}
+			\begin{flushleft} %\large
+			\emph{Author:}\\
+			\href{ \myNameLink }{\myName} % Author name - remove the \href bracket to remove the link
+			\end{flushleft}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.45\linewidth}
+			\begin{flushright} %\large
+			\emph{Supervisor:} \\
+			%\href{http://www.sussex.ac.uk/profiles/168614}{\mySupervisor}%\\ % Supervisor name - remove the \href bracket to remove the link  
+			\mySupervisor % Supervisor name
+			\end{flushright}
+		\end{minipage}
+
+		\vfill
+		\large \today
+		 
+	\end{center}
+%\end{titlepage} 
