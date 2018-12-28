@@ -42,7 +42,7 @@
 \usepackage{mparhack} % get marginpar right
 \usepackage{fixltx2e} % fixes some other LaTeX stuff 
 \PassOptionsToPackage{printonlyused,smaller,withpage}{acronym}
-\usepackage{acronym} % nice macros for handling all acronyms in the thesis
+\usepackage[printonlyused, withpage]{acronym} % nice macros for handling all acronyms in the thesis
 
 \usepackage{titlesec, color, xcolor, calc, blindtext}
 %\usepackage{multicol} % multicolumn text
@@ -50,6 +50,7 @@
 \usepackage{lscape}  % for tables in landscape mode
 \usepackage{booktabs} % lines for tables
 \usepackage{lineno} % Line Numbers 
+\usepackage{epigraph} % For epigraphs in front of chapters
 
 % Provides a linked \doi{#1} that links doi:#1 to http://dx.doi.org/#1
 % To change the text before the DOI, adjust this command   %\renewcommand\doitext{doi:}
@@ -118,7 +119,7 @@
 \usepackage{transparent}
 
 % Setup the bibliography
-\PassOptionsToPackage{square,numbers}{natbib} % for natbib
+%\PassOptionsToPackage{square,numbers}{natbib} % for natbib
 \usepackage{natbib}				
 
 \bibliographystyle{latex/ecology}
@@ -203,7 +204,6 @@
     }{\relax}
 \makeatother
 
-
 % ****************************************************************************************************
 % Final adjustments
 % ****************************************************************************************************
@@ -215,7 +215,7 @@
 
 % classic thesis package for final layout
 \PassOptionsToPackage{eulerchapternumbers,%
-				 pdfspacing,floatperchapter,%linedheaders,%
+				 pdfspacing,floatperchapter,linedheaders,%
 				 subfig,eulermath,parts,
 				 dottedtoc}{classicthesis}						 
 
@@ -249,8 +249,8 @@
 % Using different fonts
 % ****************************************************************************************************
 %\usepackage[oldstylenums]{kpfonts} % oldstyle notextcomp
-\usepackage[osf]{libertine}
-%\usepackage{fourier} % font
+%\usepackage[osf]{libertine}
+\usepackage{fourier} % font
 %\usepackage{hfoldsty} % Computer Modern with osf
 %\usepackage[light,condensed,math]{iwona}
 %\renewcommand{\sfdefault}{iwona}

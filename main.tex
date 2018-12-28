@@ -26,21 +26,22 @@
 % Document class via KOMA script
 \documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,a4paper,%1headlines,% letterpaper 
                 footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
-                BCOR=5mm,paper=a4,fontsize=12pt,
+                BCOR=5mm,paper=a4,fontsize=11pt,
                 english,%
                 ]{scrreprt}
 
-\newcommand{\myTitle}{The influence of land dynamics on biodiversity \xspace}
-\newcommand{\mySubtitle}{Recommendations for broad-scale diversity models from an independent study\xspace}
-\newcommand{\myKeywords}{biodiversity, PREDICTS, land change, model, remote sensing, EVI, biotic lag \xspace}
+\newcommand{\myTitle}{A cool title \xspace}
+\newcommand{\mySubtitle}{An even cooler subtitle \xspace}
+\newcommand{\myKeywords}{things, I, have, done, or, wish, I, had, done \xspace}
 \newcommand{\myDegree}{\xspace}
 \newcommand{\myName}{Martin Jung\xspace}
-\newcommand{\myProf}{J\o rn P.W. Scharlemann\xspace}
-\newcommand{\myOtherProf}{Pedram Rowhani\xspace}
-\newcommand{\mySupervisor}{J\o rn P.W. Scharlemann\xspace}
+\newcommand{\myNameLink}{http://www.sussex.ac.uk/profiles/357982}
+\newcommand{\myProf}{Jane Doe\xspace}
+\newcommand{\myOtherProf}{Jan Doe\xspace}
+\newcommand{\mySupervisor}{Jane Doe\xspace}
 \newcommand{\myFaculty}{Faculty of Science\xspace}
-\newcommand{\myDepartment}{Department of Biology\xspace}
-\newcommand{\myCenter}{Center for Macroecology,Evolution and Climate\xspace}
+\newcommand{\myDepartment}{Department of XX\xspace}
+\newcommand{\myCenter}{Center for XX\xspace}
 \newcommand{\myUni}{University of Sussex\xspace}
 \newcommand{\myLocation}{Brighton\xspace}
 \newcommand{\myTime}{\today \xspace}
@@ -66,23 +67,28 @@
 %---------------------------------------------------
 
 \begingroup
-  \frontmatter
+%  \frontmatter
   \pagenumbering{roman}
-  \clearpage\input{FrontBackMatter/Titlepage}
-  \clearpage\input{FrontBackMatter/Dedication} % Dedication page
-  \clearpage\input{FrontBackMatter/Acknowledgments} % Acknowledgements page
-  \clearpage\input{FrontBackMatter/Declaration} % Declaration
-  \clearpage\input{FrontBackMatter/Abstract} % Abstract page
+  \clearpage\input{front/Titlepage} % Title page
+  \clearpage\input{front/Dedication} % Dedication page
+  \clearpage\input{front/Acknowledgments} % Acknowledgements page
+  \clearpage\input{front/Declaration} % Declaration
+  \clearpage\input{front/Abstract} % Abstract page
 \endgroup
 
 %---------------------------------------------------
 % TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
 %---------------------------------------------------
+
+
 \begingroup
   \newpage  
   \setlength{\parskip}{0pt} % To restore distance between Chapters, sections and subsections in the table of contents
   \pdfbookmark[0]{Contents}{contents_bookmark}
+  \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
   \tableofcontents*  
+  \renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
 \endgroup
 
 %---------------------------------------------------
@@ -93,31 +99,32 @@
 \pagenumbering{arabic} %Start official numbering here
 %\setcounter{page}{90} % Manual adjustment if necessary
 
+% Modify the header style
 \pagestyle{scrheadings}
 
-\mainmatter
+%\mainmatter
 \pagenumbering{arabic}
 \begingroup
-  \input{content/intro}  
+  \input{content/01Chapter}  
 \endgroup
 
 %---------------------------------------------------
 % APPENDICES
 %---------------------------------------------------
-\appendix
-\begingroup
-  \input{content/appA.tex}
-\endgroup
-\backmatter
-%\input{FrontBackMatter/Acronyms.tex}
+%\appendix
+%\begingroup
+%  \input{content/Chapter01}
+%\endgroup
+%\backmatter
+%\input{front/Acronyms.tex}
 
 %---------------------------------------------------
 % BIBLIOGRAPHY
 %---------------------------------------------------
-\clearpage
-\phantomsection
-\bibliography{Chapters/bibliography}
-\clearpage\input{FrontBackMatter/Colophon}
+%\clearpage
+%\phantomsection
+%\bibliography{Chapters/bibliography}
+%\clearpage\input{front/Colophon}
 
 %---------------------------------------------------
 % END DOCUMENT
