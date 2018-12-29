@@ -24,11 +24,12 @@
 % **************************************************************************************************************
 
 % Document class via KOMA script
-\documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,a4paper,%1headlines,% letterpaper 
-                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
-                BCOR=5mm,paper=a4,fontsize=11pt,
-                english,%
-                ]{scrreprt}
+%\documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,a4paper,%1headlines,% letterpaper 
+%                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+%                BCOR=5mm,paper=a4,fontsize=11pt,
+%                english,%
+%                ]{scrreprt}
+\documentclass[a4paper,11pt,oneside]{memoir}
 
 \newcommand{\myTitle}{A cool title \xspace}
 \newcommand{\mySubtitle}{An even cooler subtitle \xspace}
@@ -56,18 +57,22 @@
 %---------------------------------------------------
 
 \begin{document}
-\frenchspacing
-\raggedbottom
+%\frenchspacing
+%\raggedbottom
+%\pagenumbering{roman}
+%\pagestyle{plain}
 
-\pagenumbering{roman}
-\pagestyle{plain}
+\makeatletter
+\renewcommand{\counterwithin}{\@ifstar{\@csinstar}{\@csin}}
+\makeatother
+\pagestyle{custom}% Set page style to custom
+\chapterstyle{hansen} % Set chapter style
 
 %---------------------------------------------------
 % PREAMBLE: roman page numbering i, ii, iii, ...
 %---------------------------------------------------
-
 \begingroup
-%  \frontmatter
+  \frontmatter
   \pagenumbering{roman}
   \clearpage\input{front/Titlepage} % Title page
   \clearpage\input{front/Dedication} % Dedication page
@@ -80,15 +85,13 @@
 % TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
 %---------------------------------------------------
 
-
 \begingroup
   \newpage  
   \setlength{\parskip}{0pt} % To restore distance between Chapters, sections and subsections in the table of contents
   \pdfbookmark[0]{Contents}{contents_bookmark}
-  \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
-  \tableofcontents*  
-  \renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
-  \renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+  \pagestyle{custom}% Set page style to custom
+  \chapterstyle{hansen} % Set chapter style
+  \tableofcontents* % as per in memoir class 
 \endgroup
 
 %---------------------------------------------------
@@ -96,14 +99,14 @@
 % THESIS CONTENT - CHAPTERS
 %---------------------------------------------------
 
+\mainmatter
+
 \pagenumbering{arabic} %Start official numbering here
 %\setcounter{page}{90} % Manual adjustment if necessary
 
 % Modify the header style
-\pagestyle{scrheadings}
+%\pagestyle{scrheadings}
 
-%\mainmatter
-\pagenumbering{arabic}
 \begingroup
   \input{content/01Chapter}  
 \endgroup
